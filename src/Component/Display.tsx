@@ -6,6 +6,7 @@ import {api2} from './API2'
 import {api3} from './API3'
 import Card from './Card'
 import Loading from './Loading'
+import Mantine_loader from './Mantine_loader'
 
 // import 'dotenv/config'
 // require('dotenv').config()
@@ -135,7 +136,8 @@ function Display ({check}:PropsN) {
         return( 
           <>
           <div className="Loading_Ani">
-            <Loading />
+            {/* <Loading /> */}
+            <Mantine_loader />
           </div>
           </>
         )

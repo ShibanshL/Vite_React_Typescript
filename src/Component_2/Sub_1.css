@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+.Main{
+    height: 100%;
+    width:100%;
+    background: rgba(255,255,255,0.5);
+    /* background: pink; */
+    /* background: url('https://2.bp.blogspot.com/-kb2mG6-zKjQ/XJqrXlC/dZwI/AAAAAAAABB0/2KvSOzS_BXEH_gntf8HSxtgNGHUTliiIgCKgBGAs/w3840-h2400-p-k-no-nu/mountain-fog-scenery-landscape-nature-uhdpaper.com-4K-180.jpg'); */
+    background-size: cover;
+    border-radius: 25px;
+  }
+
+  .Main_sub{
+    height: 100%;
+    width:100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(0,0,0,0.3); */
+    /* backdrop-filter: blur(10px); */
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: "Search"
+                          "Display";
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+
+  }
+  .Input_1{
+    grid-area: Search;
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    /* background: pink; */
+    position: relative;
+    z-index: 10;
+  }
+  .Input_1 form{
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+  }
+  .Input_1 .Input{
+    width:27vw;
+    /* margin-top: -10vh; */
+    padding:15px;
+  }
+  .Input label{
+    font-size: 1.2em;
+    margin-left:5vw;
+
+    font-weight:bold;
+  }
+  .Display{
+    grid-area: Display;
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Pseudo_ele{
+    height:90vh;
+    width:90vw;
+    position: absolute;
+    z-index: 0;
+    border-radius: 25px;
+    /* background: rgba(255, 255, 255, 0.649); */
+    /* backdrop-filter: blur(10px); */
+  }

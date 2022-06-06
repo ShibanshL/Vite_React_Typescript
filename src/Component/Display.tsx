@@ -7,7 +7,7 @@ import {api3} from './API3'
 import Card from './Card'
 import Loading from './Loading'
 import Mantine_loader from './Mantine_loader'
-
+import { TypographyStylesProvider } from '@mantine/core';
 // import 'dotenv/config'
 // require('dotenv').config()
 // require('dotenv').config()
@@ -146,12 +146,15 @@ function Display ({check}:PropsN) {
       else{
         return(
           <>
+          {/* <TypographyStylesProvider> */}
              <div className="Display_Main">
                <div className="Part_One">
                  <div className="Top_text">
-                   <h1>{data_R2?.location.name}</h1>
-                   <h2 className='Country'>{data_R2?.location.country}</h2>
-                   <h2>{data_R3?.forecast.forecastday[0].date}</h2>
+                    {/* <TypographyStylesProvider> */}
+                      <h1>{data_R2?.location.name}</h1>
+                      <h2 className='Country'>{data_R2?.location.country}</h2>
+                      <h2>{data_R3?.forecast.forecastday[0].date}</h2>
+                   {/* </TypographyStylesProvider> */}
                  </div>
                  <div className="Bottom_text">
                    <div className="Bottom_H_T">
@@ -193,7 +196,7 @@ function Display ({check}:PropsN) {
              </div>
 
 
-
+             {/* </TypographyStylesProvider> */}
           </>
         )
       }

@@ -64,12 +64,12 @@ function Sub_1()
 //   )
 return (
     <Group direction='column' style={{height:'90vh', width:'90vw', background:'pink', padding:30, borderRadius:'25px'}}>
-        <Group>
+        {/* <Group> */}
             <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-        </Group>
-        <Group>
+        {/* </Group> */}
+        {/* <Group> */}
             <Display_1 check={check}/>
-        </Group>
+        {/* </Group> */}
     </Group>
 
 )

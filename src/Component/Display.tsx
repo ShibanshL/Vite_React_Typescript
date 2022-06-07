@@ -8,13 +8,6 @@ import Card from './Card'
 import Loading from './Loading'
 import Mantine_loader from './Mantine_loader'
 import { TypographyStylesProvider } from '@mantine/core';
-// import { Container } from '@mantine/core';
-// import 'dotenv/config'
-// require('dotenv').config()
-// require('dotenv').config()
-
-// console.log(process.env)
-// require('dotenv').config()
 
 interface api {
   base: string
@@ -51,12 +44,11 @@ function Display ({check}:PropsN) {
   const [data_R, setData_R] = useState<api>()
   const [data_R2, setData_R2] = useState<api2>()
   const [data_R3, setData_R3] = useState<api3>()
-  // console.log(process.env.REACT_APP_API_KEY)
   const [name,setName] = useState<string>('')
   let city_name = check
   let t:number|undefined;
-  // const apiKey:string|undefined = process.env.REACT_APP_API_KEY
-  // const apiKey2:string|undefined = process.env.REACT_APP_API_KEY2
+  
+
   let nc = 'delhi'
     
     async function fetch_R(){

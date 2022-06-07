@@ -157,7 +157,6 @@
 .Top_temp h2{
     margin-top: -5vh;
     font-size:5em;
-    /* color:rgb(67, 67, 198); */
 }
 .Cards{
     height:100%;
@@ -167,7 +166,6 @@
     justify-content:center;
     flex-direction: row !important;
     cursor: pointer;
-    /* background: rgb(72, 245, 42); */
 }
 
 .Card_Sub{

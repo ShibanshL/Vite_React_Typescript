@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import { Center } from '@mantine/core';
-import './Sub_1.css'
+import { Center,Container,Grid } from '@mantine/core';
+// import './Sub_1.css'
 import Input_1 from './Input_1';
 import Display_Sub_1 from './Display_Sub_1';
 import Display from '../Component/Display';
@@ -50,24 +50,20 @@ function Sub_1()
     } 
     else{
         return (
-            <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
-                <div className="Main">
-                <div className="Main_sub">
-                    <div className="Input">
-                        {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
-                      <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-                    </div>
-                    <div className="Display">
-                        {/* <Display check={check}/> */}
-                        <Display_1 check={check} />
-                    </div>
-                </div>
-                </div>
-                <div className="Pseudo_ele"></div>
-            </Center>
+            <Container sx={{minWidth:'90vw', height:'90vh' ,background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                   <Grid>
+                       <Grid.Col sx={{background:'cyan'}}span={12}>
+                            <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+                       </Grid.Col>
+                       <Grid.Col sx={{background:'yellow'}} span={12}>
+                            <Display check={check}/>
+                       </Grid.Col>
+                   </Grid>
 
-          )
-    
+
+            </Container>
+
+  )
     }
 }
 

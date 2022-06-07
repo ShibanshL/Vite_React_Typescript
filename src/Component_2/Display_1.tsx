@@ -3,7 +3,7 @@ import {api2} from '../Component/API2'
 import {api3} from '../Component/API3'
 import Mantine_loader from '../Component/Mantine_loader'
 // import './Display_1.css'
-import {  Group, Text } from '@mantine/core';
+import {  Group, Text, Card } from '@mantine/core';
 
 interface api {
     base: string
@@ -125,7 +125,7 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-            <Group direction='row'>
+            <Group direction='row' style={{background:'yellow'}}>
               <Group direction='column'>
                 <Group direction='column'>
                   <Text size="lg">{data_R2?.location.name}</Text>
@@ -144,8 +144,25 @@ function Display_1({check}:PropsN) {
                 </Group>
               </Group>
               <Group direction='column'>
-                <Group>C</Group>
-                <Group>D</Group>
+                <Group direction='column'>
+                    <Text size='xl'>{data_R2?.current.temp_c}°</Text>
+                    <Text size='xl'>{data_R2?.current.temp_f}°F</Text>
+                </Group>
+                <Group direction='row'>
+                  <Card style={{background:'cyan',display:'flex',alignItems:'center', justifyContent:'center'}}>
+                      {data_R3?.forecast.forecastday.map(e => {return( 
+                          <>
+                            <Group direction='column'>
+                                <Text size='xl' key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
+                                <Text size='xl'key={e.day.condition.text}>{e.day.condition.text}</Text>
+                                <Text size='xl'key={e.date}>{e.date}</Text>
+                                <img src={e.day.condition.icon} alt="err" />
+
+                            </Group>
+                          </>
+                    )})}
+                  </Card>
+                </Group>
               </Group>
             </Group>
           </>

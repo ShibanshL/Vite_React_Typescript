@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Center,Container,Grid } from '@mantine/core';
+import { Center,Container,Grid, Group } from '@mantine/core';
 // import './Sub_1.css'
 import Input_1 from './Input_1';
 import Display_Sub_1 from './Display_Sub_1';
@@ -50,18 +50,16 @@ function Sub_1()
     } 
     else{
         return (
-            <Container sx={{minWidth:'90vw', height:'90vh' ,background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+            <Container sx={{background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                    <Grid>
-                       <Grid.Col sx={{background:'cyan'}}span={12}>
+                       <Grid.Col sx={{height:'20%',background:'cyan'}}span={12}>
                             <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
                        </Grid.Col>
-                       <Grid.Col sx={{background:'yellow'}} span={12}>
-                            <Display check={check}/>
+                       <Grid.Col sx={{height:'80%',background:'yellow'}} span={12}>
+                            <Display_1 check={check}/>
                        </Grid.Col>
                    </Grid>
-
-
-            </Container>
+            </Container> 
 
   )
     }

@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import {api2} from '../Component/API2'
 import {api3} from '../Component/API3'
 import Mantine_loader from '../Component/Mantine_loader'
-import './Display_1.css'
+// import './Display_1.css'
 import { Center, Transition } from '@mantine/core';
 
 interface api {
@@ -124,17 +124,13 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-          {/* <TypographyStylesProvider> */}
-            <Center style={{height:'100%', width:'100%'}}>
+            {/* <Center style={{height:'100%', width:'100%'}}>
               <div className="Display_Main">
-              {/* <Transition mounted={opened} transition="fade" duration={400} timingFunction="ease"> */}
                 <div className="Part_One">
                   <div className="Top_text">
-                      {/* <TypographyStylesProvider> */}
                           <h1>{data_R2?.location.name}</h1>
                           <h2 className='Country'>{data_R2?.location.country}</h2>
                           <h2>{data_R3?.forecast.forecastday[0].date}</h2>
-                    {/* </TypographyStylesProvider> */}
                   </div>
 
                   <div className="Bottom_text">
@@ -155,7 +151,6 @@ function Display_1({check}:PropsN) {
                     </div>
                   </div>
                 </div>
-                {/* </Transition> */}
                 <div className="Part_Two">
                   <div className="Top_temp">
                     <h1>{data_R2?.current.temp_c}°</h1>
@@ -164,7 +159,6 @@ function Display_1({check}:PropsN) {
                   <div className="Cards">
                       <div className="Card_Sub">{data_R3?.forecast.forecastday.map(e => {return( 
                         <>
-                        {/* <Container size={200} px={20}> */}
                           <div className="Card_Sub_Sub">
                               <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
                               <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
@@ -172,13 +166,12 @@ function Display_1({check}:PropsN) {
                               <img src={e.day.condition.icon} alt="err" />
 
                           </div>
-                        {/* </Container> */}
                         </>
                     )})}</div>
                     </div>
                   </div>
                 </div>
-             </Center>
+             </Center> */}
 
              {/* </TypographyStylesProvider> */}
           </>

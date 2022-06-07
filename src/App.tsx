@@ -16,7 +16,7 @@ function App() {
       // header={<Header height={60} p="xs">{/* Header content */}</Header>}
       styles={(theme) => ({
         main: { /*backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],*/
-                height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center',
+                height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', padding:0, margin:0, boxSizing:'border-box',
               background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)' },
       })}
     >

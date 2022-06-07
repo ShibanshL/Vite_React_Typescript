@@ -1,6 +1,6 @@
 import React from 'react'
-import './Sub_1.css'
-import { Input } from '@mantine/core';
+// import './Sub_1.css'
+import { Input, Group } from '@mantine/core';
 
 interface props  {
     data:string
@@ -11,19 +11,14 @@ function Input_1({data, setData, handleSubmit}:props) {
 console.log(data)
 
   return (
-    <div className="Input_1">
-        <form onSubmit={e => handleSubmit(e)}>
-            <label>Your City :</label>
-            <div className="Input">
-            <Input
-                placeholder="Your email"
-                radius="xl"
-                value={data}
-                onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
-            />
-            </div>
-        </form>
-    </div>
+    <Group sx={{height:'100%', display:'flex',alignItems:'center', justifyContent:'center', background:'red'}}>
+          <label>Your City :</label>
+          <Input
+            style={{border:'none'}}
+            placeholder="Enter name of a City"
+            radius="xl"
+          />
+    </Group>
   )
 }
 

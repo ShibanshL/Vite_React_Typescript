@@ -11,13 +11,17 @@ function Input_1({data, setData, handleSubmit}:props) {
 console.log(data)
 
   return (
-    <Group sx={{height:'100%', display:'flex',alignItems:'center', justifyContent:'center', background:'red'}}>
+    <Group sx={{ display:'flex',alignItems:'center', justifyContent:'center', background:'red'}}>
+    <form onSubmit={e => handleSubmit(e)} style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
           <label>Your City :</label>
           <Input
-            style={{border:'none'}}
+            style={{border:'none', width:'25vw'}}
             placeholder="Enter name of a City"
             radius="xl"
+            value={data}
+            onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
           />
+      </form>
     </Group>
   )
 }

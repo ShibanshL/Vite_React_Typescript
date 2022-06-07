@@ -49,19 +49,30 @@ function Sub_1()
           )
     } 
     else{
-        return (
-            <Container sx={{background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                   <Grid>
-                       <Grid.Col sx={{height:'20%',background:'cyan'}}span={12}>
-                            <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-                       </Grid.Col>
-                       <Grid.Col sx={{height:'80%',background:'yellow'}} span={12}>
-                            <Display_1 check={check}/>
-                       </Grid.Col>
-                   </Grid>
-            </Container> 
+//         return (
+//             <Container sx={{background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+//                    <Grid>
+//                        <Grid.Col sx={{height:'20%',background:'cyan'}}span={12}>
+//                             <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+//                        </Grid.Col>
+//                        <Grid.Col sx={{height:'80%',background:'yellow'}} span={12}>
+//                             <Display_1 check={check}/>
+//                        </Grid.Col>
+//                    </Grid>
+//             </Container> 
 
-  )
+//   )
+return (
+    <Group direction='column' style={{height:'90vh', width:'90vw', background:'pink', padding:30, borderRadius:'25px'}}>
+        <Group>
+            <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+        </Group>
+        <Group>
+            <Display_1 check={check}/>
+        </Group>
+    </Group>
+
+)
     }
 }
 

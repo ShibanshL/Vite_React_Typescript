@@ -3,7 +3,7 @@ import {api2} from '../Component/API2'
 import {api3} from '../Component/API3'
 import Mantine_loader from '../Component/Mantine_loader'
 // import './Display_1.css'
-import { Center, Transition } from '@mantine/core';
+import {  Group, Text } from '@mantine/core';
 
 interface api {
     base: string
@@ -115,7 +115,8 @@ function Display_1({check}:PropsN) {
           <>
           <div className="Loading_Ani">
             {/* <Loading /> */}
-            <Mantine_loader />
+            {/* <Mantine_loader /> */}
+            Loading
           </div>
           </>
         )
@@ -124,56 +125,29 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-            {/* <Center style={{height:'100%', width:'100%'}}>
-              <div className="Display_Main">
-                <div className="Part_One">
-                  <div className="Top_text">
-                          <h1>{data_R2?.location.name}</h1>
-                          <h2 className='Country'>{data_R2?.location.country}</h2>
-                          <h2>{data_R3?.forecast.forecastday[0].date}</h2>
-                  </div>
-
-                  <div className="Bottom_text">
-                    <div className="Bottom_H_T">
-                        <h2>{data_R3?.forecast.forecastday[0].day.condition.text}</h2>
-                    </div>
-                    <div className="Box">
-                      <div className="Wind">
-                        <img src='./assets/Wind.svg' alt="err" />
-                        <hr />
-                        <h2>{data_R?.wind.speed}KMPH</h2>
-                      </div>
-                      <div className="Humidity">
-                        <img src="./assets/Clouds.svg" alt="" />
-                        <hr />
-                        <h2>{data_R?.main.humidity}%</h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="Part_Two">
-                  <div className="Top_temp">
-                    <h1>{data_R2?.current.temp_c}°</h1>
-                    <h2>{data_R2?.current.temp_f}°F</h2>
-                  </div>
-                  <div className="Cards">
-                      <div className="Card_Sub">{data_R3?.forecast.forecastday.map(e => {return( 
-                        <>
-                          <div className="Card_Sub_Sub">
-                              <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
-                              <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
-                              <h3 key={e.date}>{e.date}</h3>
-                              <img src={e.day.condition.icon} alt="err" />
-
-                          </div>
-                        </>
-                    )})}</div>
-                    </div>
-                  </div>
-                </div>
-             </Center> */}
-
-             {/* </TypographyStylesProvider> */}
+            <Group direction='row'>
+              <Group direction='column'>
+                <Group direction='column'>
+                  <Text size="lg">{data_R2?.location.name}</Text>
+                  <Text size="md">{data_R2?.location.country}</Text>
+                  <Text size="md">{data_R3?.forecast.forecastday[0].date}</Text>
+                </Group>
+                <Group direction='row'>
+                  <Group direction='column'>
+                    <img src="./assets/Wind.svg" alt="err" style={{width:'10vw'}} />
+                    <Text size='xl'>{data_R?.wind.speed}KMPH</Text>
+                  </Group>
+                  <Group direction='column'>
+                    <img src="./assets/Clouds.svg" alt="err" style={{width:'10vw'}}/>
+                    <Text size='xl'>{data_R?.main.humidity}%</Text>
+                  </Group>
+                </Group>
+              </Group>
+              <Group direction='column'>
+                <Group>C</Group>
+                <Group>D</Group>
+              </Group>
+            </Group>
           </>
         )
       }

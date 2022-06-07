@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       {/* <div className="Search"><Sub /></div> */}
-      <div className="Search"><Test /></div>
-      {/* <div className="Search"><Sub_1 /></div> */}
+      {/* <div className="Search"><Test /></div> */}
+      <div className="Search"><Sub_1 /></div>
 
 
      

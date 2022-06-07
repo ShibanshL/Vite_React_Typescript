@@ -12,10 +12,10 @@ function Test() {
       : theme.colors.gray[7];
   
     return (
-            <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
+            <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column' }}>
 
                <div>Hi i'm working!</div>
-               <Footer height={60} p='md' style={{background:'pink'}}>{}</Footer>
+               <Footer height={60} p='md' style={{background:'pink', width:'90vw', alignItems:'baseline'}}>{}</Footer>
             </Center>
     );       
 }

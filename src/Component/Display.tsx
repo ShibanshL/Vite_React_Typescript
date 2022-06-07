@@ -175,7 +175,6 @@ function Display ({check}:PropsN) {
                  <div className="Cards">
                     <div className="Card_Sub">{data_R3?.forecast.forecastday.map(e => {return( 
                       <>
-                      {/* <Container size={200} px={20}> */}
                         <div className="Card_Sub_Sub">
                             <h2 key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</h2>
                             <h2 key={e.day.condition.text}>{e.day.condition.text}</h2>
@@ -183,7 +182,6 @@ function Display ({check}:PropsN) {
                             <img src={e.day.condition.icon} alt="err" />
 
                         </div>
-                      {/* </Container> */}
                       </>
                 )})}</div>
                  </div>

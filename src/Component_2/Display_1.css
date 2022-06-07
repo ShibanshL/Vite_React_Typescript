@@ -152,10 +152,12 @@
 }
 .Top_temp h1{
     font-size: 10em;
+    /* color:rgb(255, 82, 111); */
 }
 .Top_temp h2{
     margin-top: -5vh;
     font-size:5em;
+    /* color:rgb(67, 67, 198); */
 }
 .Cards{
     height:100%;

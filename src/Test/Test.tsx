@@ -2,9 +2,9 @@ import React from 'react'
 import './Test.css'
 import { Center } from '@mantine/core';
 import { Input } from '@mantine/core';
-import { Card, Image, Text, Badge, Button, Group, useMantineTheme } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, useMantineTheme, Transition } from '@mantine/core';
 // import { At } from 'tabler-icons-react';
-function Test() {
+function Test({opened}) {
     const theme = useMantineTheme();
 
     const secondaryColor = theme.colorScheme === 'dark'
@@ -13,7 +13,9 @@ function Test() {
   
     return (
             <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
-              <div>All elements inside Center are centered</div>
+               <Transition mounted={opened} transition="fade" duration={400} timingFunction="ease">
+                  {(styles) => <div style={styles}>Your modal</div>}
+                </Transition>
             </Center>
     );       
 }

@@ -23,7 +23,6 @@ console.log(data)
             />
             </div>
         </form>
-
     </div>
   )
 }

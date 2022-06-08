@@ -205,55 +205,6 @@ function Display_1({check}:PropsN) {
           </>
         )
       }
-
-
-    //   return(
-    //     <>
-    //       <Group direction='row'>
-    //         <Group direction='column'>
-    //           <Group direction='column'>
-    //             <Text size="lg">{data_R2?.location.name}</Text>
-    //             <Text size="md">{data_R2?.location.country}</Text>
-    //             <Text size="md">{data_R3?.forecast.forecastday[0].date}</Text>
-    //           </Group>
-    //           <Group direction='row'>
-    //             <Group direction='column'>
-    //               <img src="./assets/Wind.svg" alt="err" style={{width:'8vw'}} />
-    //               <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
-    //               <Text size='xl'>{data_R?.wind.speed}KMPH</Text>
-    //             </Group>
-    //             <Group direction='column'>
-    //               <img src="./assets/Clouds.svg" alt="err" style={{width:'8vw'}}/>
-    //               <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
-    //               <Text size='xl'>{data_R?.main.humidity}%</Text>
-    //             </Group>
-    //           </Group>
-    //         </Group>
-    //         <Group direction='column'>
-    //           <Group direction='column'>
-    //               <Text size='xl'>{data_R2?.current.temp_c}°</Text>
-    //               <Text size='xl'>{data_R2?.current.temp_f}°F</Text>
-    //           </Group>
-    //           <Group direction='row'>
-    //             <Card>
-    //                 {data_R3?.forecast.forecastday.map(e => {return( 
-    //                     <>
-    //                       <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-    //                           <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
-    //                           <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
-    //                           <Text size='md'key={e.date}>{e.date}</Text>
-    //                           <img src={e.day.condition.icon} alt="err" />
-
-    //                       </Group>
-    //                     </>
-    //               )})}
-    //             </Card>
-    //           </Group>
-    //         </Group>
-    //       </Group>
-    //     </>
-    //   )
-    // }
 }
 
 export default Display_1

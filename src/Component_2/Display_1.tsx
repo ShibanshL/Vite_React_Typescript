@@ -113,11 +113,11 @@ function Display_1({check}:PropsN) {
     if(find==false){
         return( 
           <>
-          <div className="Loading_Ani">
+          {/* <div className="Loading_Ani"> */}
             {/* <Loading /> */}
             {/* <Mantine_loader /> */}
             Loading
-          </div>
+          {/* </div> */}
           </>
         )
        

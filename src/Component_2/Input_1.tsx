@@ -26,22 +26,6 @@ console.log(data)
       </form>
     </Group>
   )
-
-
-  // return (
-  //   <Group sx={{}}>
-  //   <form onSubmit={e => handleSubmit(e)} style={{}}>
-  //         <label>Your City :</label>
-  //         <Input
-  //           style={{border:'none', width:'25vw'}}
-  //           placeholder="Enter name of a City"
-  //           radius="xl"
-  //           value={data}
-  //           onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
-  //         />
-  //     </form>
-  //   </Group>
-  // )
 }
 
 export default Input_1

@@ -11,7 +11,7 @@ function Input_1({data, setData, handleSubmit}:props) {
 console.log(data)
 
   return (
-    <Group sx={{ display:'flex',alignItems:'center', justifyContent:'baseline', background:'red', width:'100%'}}>
+    <Group sx={{ display:'flex',alignItems:'center', justifyContent:'baseline',/* background:'red'*/ width:'100%'}}>
     <form onSubmit={e => handleSubmit(e)} style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
           <label>Your City :</label>
           <Input

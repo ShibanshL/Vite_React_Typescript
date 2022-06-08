@@ -1,6 +1,6 @@
 import React from 'react'
 // import './Sub_1.css'
-import { Input, Group } from '@mantine/core';
+import { Input, Group, MediaQuery } from '@mantine/core';
 
 interface props  {
     data:string
@@ -14,13 +14,15 @@ console.log(data)
     <Group sx={{ display:'flex',alignItems:'center', justifyContent:'baseline' /*, background:'red' width:'100%'*/}}>
     <form onSubmit={e => handleSubmit(e)} style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
           <label>Your City :</label>
-          <Input
-            style={{border:'none', width:'25vw'}}
-            placeholder="Enter name of a City"
-            radius="xl"
-            value={data}
-            onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
-          />
+          <MediaQuery query='(max-width:800px)' styles={{width:'40vw !important'}}>
+            <Input
+              style={{border:'none', width:'25vw'}}
+              placeholder="Enter name of a City"
+              radius="xl"
+              value={data}
+              onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
+            />
+          </MediaQuery>
       </form>
     </Group>
   )

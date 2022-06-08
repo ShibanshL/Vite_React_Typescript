@@ -17,11 +17,12 @@ function App() {
       styles={(theme) => ({
         main: { /*backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],*/
                 height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', padding:0, margin:0, boxSizing:'border-box',
-              background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)' },
+              background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)', overflow:'hidden' },
       })}
     >
       {/* <div className="Search"><Sub_1 /></div> */}
       <Container style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}><Sub_1 /></Container>
+      {/* <Container style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}><Test /></Container> */}
       {/* <Container style={{ width:'90vw', minWidth:'90vw', height:'90vh', background:'cyan'}}><Sub_1 /></Container> */}
 
       

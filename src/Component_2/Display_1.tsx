@@ -3,7 +3,7 @@ import {api2} from '../Component/API2'
 import {api3} from '../Component/API3'
 import Mantine_loader from '../Component/Mantine_loader'
 // import './Display_1.css'
-import {  Group, Text, Card,  Divider } from '@mantine/core';
+import {  Group, Text, Card,  Divider, MediaQuery } from '@mantine/core';
 
 interface api {
     base: string
@@ -125,48 +125,83 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-            <Group direction='row' style={{}}>
-              <Group direction='column' style={{/*width:'43vw', height:'70vh'*/}}>
-                <Group direction='column' style={{/*width:'100%', height:'50%'*/}}>
-                  <Text size="lg" style={{fontSize:'5em'/*, marginTop:'-2vw'*/}}>{data_R2?.location.name}</Text>
-                  <Text size="md" style={{fontSize:'3em'/*, marginTop:'-2vw'*/}}>{data_R2?.location.country}</Text>
-                  <Text size="md" style={{fontSize:'2em'}}>{data_R3?.forecast.forecastday[0].date}</Text>
-                </Group>
-                <Group direction='row' style={{/*width:'100%', height:'40%',*/display:'flex',alignItems:'center', justifyContent:'space-evenly' }}>
-                  <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <img src="./assets/Wind.svg" alt="err" style={{width:'8vw'}} />
-                    <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
-                    <Text size='xl'>{data_R?.wind.speed}KMPH</Text>
+            <MediaQuery query="(max-width: 1100px)" styles={{display:'flex',alignItems:'center', justifyContent:'baseline', flexDirection:'row',/* background:'pink'*/}}>
+              <Group direction='row' style={{}}>
+                <Group direction='column' style={{/*width:'43vw', height:'70vh'*/}}>
+                  <Group direction='column' style={{/*width:'100%', height:'50%'*/}}>
+                    <MediaQuery query="(max-width: 1100px) and (min-width:500px)" styles={{fontSize:'3em'}}>
+                      <MediaQuery query="(max-width: 500px)" styles={{fontSize:'2em !important'}}>
+                        <Text size="lg" style={{fontSize:'5em'/*, marginTop:'-2vw'*/}}>{data_R2?.location.name}</Text>
+                      </MediaQuery>
+                    </MediaQuery>
+                    <MediaQuery query="(max-width: 1100px) and (min-width:500px)" styles={{fontSize:'2em'}}>
+                      <MediaQuery query="(max-width: 500px)" styles={{fontSize:'1em !important'}}>
+                        <Text size="md" style={{fontSize:'3em'/*, marginTop:'-2vw'*/}}>{data_R2?.location.country}</Text>
+                      </MediaQuery>
+                    </MediaQuery>
+                    <MediaQuery query="(max-width: 1100px) and (min-width:500px)" styles={{fontSize:'2em'}}>
+                      <MediaQuery query="(max-width: 500px)" styles={{fontSize:'1em !important'}}>
+                        <Text size="md" style={{fontSize:'1em'}}>{data_R3?.forecast.forecastday[0].date}</Text>
+                      </MediaQuery>
+                    </MediaQuery>
                   </Group>
-                  <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <img src="./assets/Clouds.svg" alt="err" style={{width:'8vw'}}/>
-                    <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
-                    <Text size='xl'>{data_R?.main.humidity}%</Text>
+                  <Group direction='row' style={{/*width:'100%', height:'40%',*/display:'flex',alignItems:'center', justifyContent:'space-evenly' }}>
+                    <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                      <MediaQuery styles={{width:'6vw'}}>
+                        <img src="./assets/Wind.svg" alt="err" style={{width:'8vw'}} />
+                      </MediaQuery>
+                      <MediaQuery styles={{width:'100px'}}>
+                      <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
+                      </MediaQuery>
+                      <Text size='xl'>{data_R?.wind.speed}KMPH</Text>
+                    </Group>
+                    <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                      <MediaQuery styles={{width:'6vw'}}>
+                        <img src="./assets/Clouds.svg" alt="err" style={{width:'8vw'}}/>
+                      </MediaQuery>
+                      <MediaQuery styles={{width:'100px'}}>
+                        <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
+                      </MediaQuery>
+                      <Text size='xl'>{data_R?.main.humidity}%</Text>
+                    </Group>
                   </Group>
                 </Group>
-              </Group>
-              <Group direction='column' style={{/*width:'42vw', height:'70vh'*/}}>
-                <Group direction='column' style={{/*width:'100%', height:'40%',*/ display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <Text size='xl' style={{fontSize:'8em', /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text>
-                    <Text size='xl' style={{fontSize:'4em', /*marginTop:'-5vh'*/}}>{data_R2?.current.temp_f}°F</Text>
-                </Group>
-                <Group direction='row'>
-                  <Card style={{background:'none',display:'flex',alignItems:'center', justifyContent:'center'}}>
-                      {data_R3?.forecast.forecastday.map(e => {return( 
-                          <>
-                            <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                                <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
-                                <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
-                                <Text size='md'key={e.date}>{e.date}</Text>
-                                <img src={e.day.condition.icon} alt="err" />
+                <MediaQuery query="(max-width:500px)" styles={{display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                  <Group direction='column' style={{/*width:'42vw', height:'70vh'*/}}>
+                    <Group direction='column' style={{/*width:'100%', height:'40%',*/ display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                    <MediaQuery query="(max-width: 1100px) and (min-width:500px)"  styles={{fontSize:'4em !important'}}>
+                      <MediaQuery query="(max-width: 500px)" styles={{fontSize:'2em !important'}}>
+                        <Text size='xl' style={{fontSize:'8em', /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text>
+                      </MediaQuery>
+                    </MediaQuery>
+                    <MediaQuery query="(max-width: 1100px) and (min-width:500px)"  styles={{fontSize:'2em !important'}}>
+                      <MediaQuery query="(max-width: 500px)" styles={{fontSize:'1em !important'}}>
+                        <Text size='xl' style={{fontSize:'4em', /*marginTop:'-5vh'*/}}>{data_R2?.current.temp_f}°F</Text>
+                      </MediaQuery>
+                    </MediaQuery>
+                    </Group>
+                    <Group direction='row'>
+                      <Card style={{background:'none',display:'flex',alignItems:'center', justifyContent:'center'}}>
+                          {data_R3?.forecast.forecastday.map(e => {return( 
+                              <>
+                                <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                                    <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
+                                    <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
+                                      <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
+                                      <Text size='md'key={e.date}>{e.date}</Text>
+                                    </Group>
+                                    <img src={e.day.condition.icon} alt="err" />
 
-                            </Group>
-                          </>
-                    )})}
-                  </Card>
-                </Group>
+                                </Group>
+                              </>
+                        )})}
+                      </Card>
+                    </Group>
+                  </Group>
+                </MediaQuery>
               </Group>
-            </Group>
+            </MediaQuery>
+
           </>
         )
       }

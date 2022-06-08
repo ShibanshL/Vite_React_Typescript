@@ -63,7 +63,7 @@ function Sub_1()
 
 //   )
 return (
-    <Group direction='column' style={{height:'90vh', width:'90vw', background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:30, borderRadius:'25px'}}>
+    <Group direction='column' style={{/*height:'90vh', width:'90vw',*/ background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:30, borderRadius:'25px'}}>
         {/* <Group> */}
             <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
         {/* </Group> */}

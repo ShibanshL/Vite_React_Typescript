@@ -156,8 +156,8 @@ function Display_1({check}:PropsN) {
                           <>
                             <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center', height:'230px', width:'170px', background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                                 <Text size='xl' key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
-                                <Text size='xl'key={e.day.condition.text}>{e.day.condition.text}</Text>
-                                <Text size='xl'key={e.date}>{e.date}</Text>
+                                <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
+                                <Text size='md'key={e.date}>{e.date}</Text>
                                 <img src={e.day.condition.icon} alt="err" />
 
                             </Group>

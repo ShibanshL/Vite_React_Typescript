@@ -126,7 +126,7 @@ function Display_1({check}:PropsN) {
         return(
           <>
             <Group direction='row' style={{background:'yellow'}}>
-              <Group direction='column'>
+              <Group direction='column' style={{width:'43vw', height:'70vh'}}>
                 <Group direction='column'>
                   <Text size="lg">{data_R2?.location.name}</Text>
                   <Text size="md">{data_R2?.location.country}</Text>
@@ -143,8 +143,8 @@ function Display_1({check}:PropsN) {
                   </Group>
                 </Group>
               </Group>
-              <Group direction='column'>
-                <Group direction='column'>
+              <Group direction='column' style={{width:'42vw', height:'70vh'}}>
+                <Group direction='column' style={{background:'violet',width:'100%', height:'40%', display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                     <Text size='xl'>{data_R2?.current.temp_c}°</Text>
                     <Text size='xl'>{data_R2?.current.temp_f}°F</Text>
                 </Group>
@@ -152,7 +152,7 @@ function Display_1({check}:PropsN) {
                   <Card style={{background:'cyan',display:'flex',alignItems:'center', justifyContent:'center'}}>
                       {data_R3?.forecast.forecastday.map(e => {return( 
                           <>
-                            <Group direction='column'>
+                            <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center', width:'150px', background:'pink', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                                 <Text size='xl' key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
                                 <Text size='xl'key={e.day.condition.text}>{e.day.condition.text}</Text>
                                 <Text size='xl'key={e.date}>{e.date}</Text>

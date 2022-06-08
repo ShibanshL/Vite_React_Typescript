@@ -21,7 +21,7 @@ function App() {
       })}
     >
       {/* <div className="Search"><Sub_1 /></div> */}
-      <Container style={{ display:'flex', alignItems:'center', justifyContent:'center'}}><Sub_1 /></Container>
+      <Container style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}><Sub_1 /></Container>
       {/* <Container style={{ width:'90vw', minWidth:'90vw', height:'90vh', background:'cyan'}}><Sub_1 /></Container> */}
 
       

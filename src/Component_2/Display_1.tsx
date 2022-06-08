@@ -3,7 +3,7 @@ import {api2} from '../Component/API2'
 import {api3} from '../Component/API3'
 import Mantine_loader from '../Component/Mantine_loader'
 // import './Display_1.css'
-import {  Group, Text, Card } from '@mantine/core';
+import {  Group, Text, Card,  Divider } from '@mantine/core';
 
 interface api {
     base: string
@@ -127,32 +127,34 @@ function Display_1({check}:PropsN) {
           <>
             <Group direction='row' style={{background:'yellow'}}>
               <Group direction='column' style={{width:'43vw', height:'70vh'}}>
-                <Group direction='column'>
+                <Group direction='column' style={{width:'100%', height:'50%'}}>
                   <Text size="lg">{data_R2?.location.name}</Text>
                   <Text size="md">{data_R2?.location.country}</Text>
                   <Text size="md">{data_R3?.forecast.forecastday[0].date}</Text>
                 </Group>
-                <Group direction='row'>
-                  <Group direction='column'>
-                    <img src="./assets/Wind.svg" alt="err" style={{width:'10vw'}} />
+                <Group direction='row' style={{width:'100%', height:'40%', background:'cyan',display:'flex',alignItems:'center', justifyContent:'space-evenly' }}>
+                  <Group direction='column' style={{}}>
+                    <img src="./assets/Wind.svg" alt="err" style={{width:'8vw'}} />
+                    <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
                     <Text size='xl'>{data_R?.wind.speed}KMPH</Text>
                   </Group>
                   <Group direction='column'>
-                    <img src="./assets/Clouds.svg" alt="err" style={{width:'10vw'}}/>
+                    <img src="./assets/Clouds.svg" alt="err" style={{width:'8vw'}}/>
+                    <Divider size='xs' style={{ background:'black', height:'2px', width:'150px'}}/>
                     <Text size='xl'>{data_R?.main.humidity}%</Text>
                   </Group>
                 </Group>
               </Group>
               <Group direction='column' style={{width:'42vw', height:'70vh'}}>
                 <Group direction='column' style={{background:'violet',width:'100%', height:'40%', display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <Text size='xl'>{data_R2?.current.temp_c}°</Text>
-                    <Text size='xl'>{data_R2?.current.temp_f}°F</Text>
+                    <Text size='xl' style={{fontSize:'8em', marginTop:'-18vh'}}>{data_R2?.current.temp_c}°</Text>
+                    <Text size='xl' style={{fontSize:'4em',  marginTop:'-5vh'}}>{data_R2?.current.temp_f}°F</Text>
                 </Group>
                 <Group direction='row'>
                   <Card style={{background:'cyan',display:'flex',alignItems:'center', justifyContent:'center'}}>
                       {data_R3?.forecast.forecastday.map(e => {return( 
                           <>
-                            <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center', width:'150px', background:'pink', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                            <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center', height:'230px', width:'170px', background:'pink', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                                 <Text size='xl' key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
                                 <Text size='xl'key={e.day.condition.text}>{e.day.condition.text}</Text>
                                 <Text size='xl'key={e.date}>{e.date}</Text>

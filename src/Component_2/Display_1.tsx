@@ -196,7 +196,6 @@ function Display_1({check}:PropsN) {
                                         </MediaQuery>
                                       </Group>
                                       <img src={e.day.condition.icon} alt="err" />
-
                                   </Group>
                                 </MediaQuery>
                               </>
@@ -207,7 +206,6 @@ function Display_1({check}:PropsN) {
                 </MediaQuery>
               </Group>
             </MediaQuery>
-
           </>
         )
       }

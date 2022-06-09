@@ -191,7 +191,7 @@ function Display_1({check}:PropsN) {
                                         <MediaQuery query='(max-width: 500px)' styles={{display:'none'}}>
                                           <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
                                         </MediaQuery>
-                                        <MediaQuery query='(max-width: 500px)' styles={{display:'none'}}>
+                                        <MediaQuery query='(max-width: 500px)' styles={{color:'grey'}}>
                                           <Text size='md'key={e.date}>{e.date}</Text>
                                         </MediaQuery>
                                       </Group>

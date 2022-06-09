@@ -29,8 +29,8 @@ function Sub_1()
     if(check.length==0)
     {
         return (
-            <MediaQuery query='(max-width: 500px)' styles={{ width:'100vw', height:'100vh'}}>
-                <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
+            <MediaQuery query='(max-width: 500px)' styles={{ width:'100vw !important', height:'100vh !important'}}>
+                <Container size='xl' style={{ width:'100vw', height:'100vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
               
                         {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
                         <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
@@ -38,7 +38,7 @@ function Sub_1()
                         {/* <Display_Sub /> */}
                         <Display_Sub_1 />
                
-                </Center>
+                </Container>
             </MediaQuery>
 
           )

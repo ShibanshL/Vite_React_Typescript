@@ -1,8 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import {api2} from '../Component_2/API2'
 import {api3} from '../Component_2/API3'
-// import Mantine_loader from '../Component/Mantine_loader'
-// import './Display_1.css'
 import {  Group, Text, Card,  Divider, MediaQuery } from '@mantine/core';
 
 interface api {
@@ -47,12 +45,9 @@ function Display_1({check}:PropsN) {
           var res = await fetch(urlc)
           let kdata = await res.json()
           console.log('fetch_R',kdata)
-          // setFind(true)
-          // setTimeout(()=>{
-            setData_R(kdata)
-            setName(kdata.name)
-          // },5000)
-         setTimeout( 
+          setData_R(kdata)
+          setName(kdata.name)
+          setTimeout( 
            ()=>{
             setFind(true)
            }
@@ -72,7 +67,6 @@ function Display_1({check}:PropsN) {
           setFind(true)
           setData_R2(kdata)
           setFind(false)
-          // console.log('New api : ',kdata)
         } 
         catch (e) {
           console.log(e)
@@ -84,13 +78,11 @@ function Display_1({check}:PropsN) {
           let url = 'http://api.weatherapi.com/v1/forecast.json?key=e69179dbcaf74929a78121725220206&q='+city_name+'&days=10&aqi=no&alerts=no'
           var res = await fetch(url)
           let kdata = await res.json()
-          // setFind(false)
           console.log('fetch_R3',kdata)
           setData_R2(kdata)
           console.log('New api : ',kdata)
           setData_R3(kdata)
           console.log('pls',data_R3)
-          // setFind(true)
         } 
         catch (e) {
           console.log(e)

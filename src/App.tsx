@@ -19,7 +19,7 @@ function App() {
       })}
     >
       <Container size='xl' style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}><Sub_1 /></Container>
-     
+      {/* <Container size='xl'><Test /></Container> */}
 
       
       {/* Your application here */}

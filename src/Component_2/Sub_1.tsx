@@ -30,7 +30,7 @@ function Sub_1()
     {
         return (
             <MediaQuery query='(max-width: 500px)' styles={{ width:'100vw !important', height:'100vh !important'}}>
-                <Container size='xl' style={{ width:'100vw', height:'100vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
+                <Container size='xl' style={{ /*width:'100vw', height:'100vh',*/ borderRadius:'25px', backdropFilter:'blur(10px)' }}>
               
                         {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
                         <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>

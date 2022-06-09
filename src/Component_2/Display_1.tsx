@@ -123,7 +123,7 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-          <MediaQuery query='(max-width: 1400px) and (min-width:1100px)' styles={{marginTop:'0vh',position:'absolute'}}>
+          <MediaQuery query='(max-width: 1400px) and (min-width:1100px)' styles={{marginTop:'0vh',position:'absolute', padding:'0 30px'}}>
               <MediaQuery query="(max-width: 1400px)" styles={{width:'100%',display:'flex',alignItems:'center', justifyContent:'space-between', flexDirection:'row',/* background:'pink'*/}}>
                 <Group direction='row' style={{}}>
                   <Group direction='column' style={{/*width:'43vw', height:'70vh'*/}}>

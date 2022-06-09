@@ -40,11 +40,13 @@ function Sub_1()
     } 
     else{
         return (
-            <MediaQuery query='(max-width:500px)' styles={{ width:'100vw !important', height:'100vh !important', borderRadius:'0px !important'}}>
-                <Group direction='column' style={{/*height:'90vh', width:'90vw',*/ background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:'20px', borderRadius:'25px'}}>
-                        <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-                        <Display_1 check={check}/>
-                </Group>
+            <MediaQuery query="(max-width: 1400px) and (min-width:1100px)" styles={{width:'90vw !important', height:'90vh !important'}}>
+                <MediaQuery query='(max-width:500px)' styles={{ width:'100vw !important', height:'100vh !important', borderRadius:'0px !important'}}>
+                    <Group direction='column' style={{background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:'20px', borderRadius:'25px'}}>
+                            <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+                            <Display_1 check={check}/>
+                    </Group>
+                </MediaQuery>
             </MediaQuery>
             )
         }

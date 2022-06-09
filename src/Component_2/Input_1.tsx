@@ -11,20 +11,22 @@ function Input_1({data, setData, handleSubmit}:props) {
 console.log(data)
 
   return (
-    <Group sx={{ display:'flex',alignItems:'center', justifyContent:'baseline' /*, background:'red' width:'100%'*/}}>
-    <form onSubmit={e => handleSubmit(e)} style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
-          <label>Your City :</label>
-          <MediaQuery query='(max-width:800px)' styles={{width:'40vw !important'}}>
-            <Input
-              style={{border:'none', width:'25vw'}}
-              placeholder="Enter name of a City"
-              radius="xl"
-              value={data}
-              onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
-            />
-          </MediaQuery>
-      </form>
-    </Group>
+    <MediaQuery query='(max-width:1400px)' styles={{position:'relative'}}>
+      <Group sx={{ display:'flex',alignItems:'center', justifyContent:'baseline' /*, background:'red' width:'100%'*/}}>
+      <form onSubmit={e => handleSubmit(e)} style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
+            <label>Your City :</label>
+            <MediaQuery query='(max-width:800px)' styles={{width:'40vw !important'}}>
+              <Input
+                style={{border:'none', width:'25vw'}}
+                placeholder="Enter name of a City"
+                radius="xl"
+                value={data}
+                onChange={(e: { target: { value: React.SetStateAction<string>; }; })=>{setData(e.target.value)}}
+              />
+            </MediaQuery>
+        </form>
+      </Group>
+    </MediaQuery>
   )
 }
 

@@ -29,7 +29,7 @@ function Sub_1()
     if(check.length==0)
     {
         return (
-            <MediaQuery query='(max-width: 500px)' styles={{ width:'100vw !important', height:'100vh !important'}}>
+            <MediaQuery query='(max-width:500px)' styles={{ width:'100vw !important', height:'100vh !important', background:'cyan !important'}}>
                 <Container size='xl' style={{ /*width:'100vw', height:'100vh',*/ borderRadius:'25px', backdropFilter:'blur(10px)' }}>
               
                         {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
@@ -44,31 +44,15 @@ function Sub_1()
           )
     } 
     else{
-//         return (
-//             <Container sx={{background:'pink', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-//                    <Grid>
-//                        <Grid.Col sx={{height:'20%',background:'cyan'}}span={12}>
-//                             <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-//                        </Grid.Col>
-//                        <Grid.Col sx={{height:'80%',background:'yellow'}} span={12}>
-//                             <Display_1 check={check}/>
-//                        </Grid.Col>
-//                    </Grid>
-//             </Container> 
-
-//   )
-return (
-    <Group direction='column' style={{/*height:'90vh', width:'90vw',*/ background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:'20px', borderRadius:'25px'}}>
-        {/* <Group> */}
-            <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-        {/* </Group> */}
-        {/* <Group> */}
-            <Display_1 check={check}/>
-        {/* </Group> */}
-    </Group>
-
-)
-    }
+        return (
+            <MediaQuery query='(max-width:500px)' styles={{ width:'100vw !important', height:'100vh !important', borderRadius:'0px !important'}}>
+                <Group direction='column' style={{/*height:'90vh', width:'90vw',*/ background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', padding:'20px', borderRadius:'25px'}}>
+                        <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+                        <Display_1 check={check}/>
+                </Group>
+            </MediaQuery>
+            )
+        }
 }
 
 export default Sub_1

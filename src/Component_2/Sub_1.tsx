@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Center,Container,Grid, Group } from '@mantine/core';
+import { Center,Container,Grid, Group, MediaQuery } from '@mantine/core';
 // import './Sub_1.css'
 import Input_1 from './Input_1';
 import Display_Sub_1 from './Display_Sub_1';
@@ -29,21 +29,17 @@ function Sub_1()
     if(check.length==0)
     {
         return (
-            <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
-
-            <div className="Main">
-              <div className="Main_sub">
-                  <div className="Input">
-                      {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
-                      <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-                  </div>
-                  <div className="Display">
-                      {/* <Display_Sub /> */}
-                      <Display_Sub_1 />
-                  </div>
-              </div>
-            </div>
-            </Center>
+            <MediaQuery query='(max-width: 500px)' styles={{ width:'100vw', height:'100vh'}}>
+                <Center style={{ width:'90vw', height:'90vh', borderRadius:'25px', backdropFilter:'blur(10px)' }}>
+              
+                        {/* <Input data={data} setData={setData} handleSubmit={handleSubmit}/> */}
+                        <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+                   
+                        {/* <Display_Sub /> */}
+                        <Display_Sub_1 />
+               
+                </Center>
+            </MediaQuery>
 
           )
     } 

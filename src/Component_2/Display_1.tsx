@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
-import {api2} from '../Component/API2'
-import {api3} from '../Component/API3'
-import Mantine_loader from '../Component/Mantine_loader'
+import {api2} from '../Component_2/API2'
+import {api3} from '../Component_2/API3'
+// import Mantine_loader from '../Component/Mantine_loader'
 // import './Display_1.css'
 import {  Group, Text, Card,  Divider, MediaQuery } from '@mantine/core';
 

@@ -188,7 +188,7 @@ function Display_1({check}:PropsN) {
                                   <Group direction='column' style={{margin:'15px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                                       <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
                                       <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
-                                        <MediaQuery query='(max-width: 500px)' styles={{display:'none'}}>
+                                        <MediaQuery query='(max-width: 1100px)' styles={{display:'none'}}>
                                           <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text>
                                         </MediaQuery>
                                         <MediaQuery query='(max-width: 500px)' styles={{color:'grey'}}>

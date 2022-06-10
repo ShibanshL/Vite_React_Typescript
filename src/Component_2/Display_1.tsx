@@ -117,12 +117,15 @@ function Display_1({check}:PropsN) {
           <>
           <Grid>
             <Grid.Col span={6}>
-              <Group><Text  gradient={{ from: 'red', to: 'cyan', deg: 45 }}
+              <Group><Text   variant="gradient" gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
                             size="xl"
                             weight={700}>{data_R2?.location.name}</Text></Group>
             </Grid.Col>
             <Grid.Col span={6}>
-              <Group><Text size='xl' style={{ /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text></Group>
+              <Group direction='column'>
+                <Text size='xl'   align="center" style={{ /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text>
+                <Text size='sm'   align="center" style={{ /*marginTop:'-5vh'*/}}>{data_R2?.current.temp_f}°F</Text>
+              </Group>
             </Grid.Col>
           </Grid>
           </>

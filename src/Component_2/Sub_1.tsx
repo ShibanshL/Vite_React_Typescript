@@ -42,14 +42,14 @@ function Sub_1()
     else{
         return (
             <>
-            <Grid>
-                <Grid.Col span={4}>
-                    <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
-                </Grid.Col>
-                <Grid.Col span={12}>
-                    <Display_1 check={check}/>
-                </Grid.Col>
-            </Grid>
+                <Grid>
+                    <Grid.Col span={4}>
+                        <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
+                    </Grid.Col>
+                    <Grid.Col span={12}>
+                        <Display_1 check={check}/>
+                    </Grid.Col>
+                </Grid>
             </>
             )
         }

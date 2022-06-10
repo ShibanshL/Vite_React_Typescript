@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import {api2} from '../Component_2/API2'
 import {api3} from '../Component_2/API3'
-import {  Group, Text, Card,  Divider, MediaQuery } from '@mantine/core';
+import {  Group, Text, Card,  Divider, MediaQuery, Grid } from '@mantine/core';
 
 interface api {
     base: string
@@ -115,6 +115,16 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
+          <Grid>
+            <Grid.Col span={6}>
+              <Group><Text  gradient={{ from: 'red', to: 'cyan', deg: 45 }}
+                            size="xl"
+                            weight={700}>{data_R2?.location.name}</Text></Group>
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Group><Text size='xl' style={{ /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text></Group>
+            </Grid.Col>
+          </Grid>
           </>
         )
       }

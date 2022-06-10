@@ -15,7 +15,9 @@ function App() {
               background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)', overflow:'hidden' },
       })}
     >
-      <Container size='xl' style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}><Sub_1 /></Container>
+      <Container size="xl" px="xl" style={{background:'pink', borderRadius:'15px', padding:'20px'}}><Sub_1 /></Container>
+      {/* <Container  style={{background:'pink'}} size='xs'>Hi have good day</Container> */}
+
     </AppShell>
   );
 }

@@ -12,7 +12,7 @@ function App() {
 
       styles={(theme) => ({
         main: { height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', padding:0, margin:0, boxSizing:'border-box',
-              background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)', overflow:'hidden' },
+              background:'url(https://ipt.imgix.net/202004/x/0/lofoten-216.jpg)', overflow:'hidden',fontFamily: 'Poppins' },
       })}
     >
       <Container size="xl" px="xl" style={{background:'pink', borderRadius:'15px', padding:'20px'}}><Sub_1 /></Container>

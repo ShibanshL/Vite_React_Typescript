@@ -93,7 +93,7 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-          <Grid style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column',fontFamily: 'Poppins'}}>
+          <Grid style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column',fontFamily: 'Poppins', padding:'20px'}}>
            <Grid.Col span={12}>
               <Group direction='column'>
                 <Text align="center"  variant="gradient" gradient={{ from: 'pink', to: 'cyan', deg: 45 }} style={{ fontSize:'8vw',fontFamily: 'Poppins'}}>{data_R2?.current.temp_c}°</Text>
@@ -101,36 +101,46 @@ function Display_1({check}:PropsN) {
               </Group>
             </Grid.Col>
             <Grid.Col span={12}>
-              <Group><Text  
-                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-10vh',fontFamily: 'Poppins'}}
+              <Group>
+                <Text  style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-2vh',fontFamily: 'Poppins'}}
                             weight={700}>{data_R2?.location.name}</Text></Group>
             </Grid.Col>
             <Grid.Col span={12}>
               <Group><Text  
-                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-5vh',fontFamily: 'Poppins'}}
+                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'0',fontFamily: 'Poppins'}}
                             weight={700}>{data_R2?.location.country}</Text></Group>
             </Grid.Col>
             <Group>
               {data_R3?.forecast.forecastday.map(e => {return( 
                     <>
-                    {/* <Grid gutter="xs"> */}
-                      {/* <Grid.Col span={4}> */}
                         <Card style={{margin:'10px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                             <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
                             <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
                                 {/* <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text> */}
-                                <Text size='md'style={{fontSize:'0.8vw'}} key={e.date}>{e.date}</Text>
+                                <Text size='md'style={{fontSize:'0.7vw'}} key={e.date}>{e.date}</Text>
                             </Group>
                             <img src={e.day.condition.icon} alt="err" />
                         </Card>
-                      {/* </Grid.Col> */}
-                    {/* </Grid>  */}
                     </>
               )})}
             </Group>
             <Group>
-              
+              <Text style={{fontSize:'2vw'}}>{data_R3?.forecast.forecastday[0].day.condition.text}</Text>
             </Group>
+            <Grid style={{background:'yellow', marginTop:'2vh', width:'100%', borderRadius:'15px', padding:'10px'}}>
+                <Grid.Col span={6}>
+                  <Group direction='column' style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                    <img src='./assets/Wind.svg' alt="err" style={{width:'2.5vw'}}/>
+                    <Text>{data_R?.wind.speed}KMPH</Text>
+                  </Group>
+                </Grid.Col>
+                <Grid.Col span={6}>
+                  <Group direction='column' style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                    <img src='./assets/Clouds.svg' alt="err" style={{width:'2.5vw'}}/>
+                    <Text>{data_R?.main.humidity}%</Text>
+                  </Group>
+                </Grid.Col>
+            </Grid>
           </Grid>
           </>
         )

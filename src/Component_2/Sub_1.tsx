@@ -43,7 +43,7 @@ function Sub_1()
         return (
             <>
                 <Grid style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <Grid.Col span={12}>
+                    <Grid.Col span={12} style={{}}>
                         <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
                     </Grid.Col>
                     <Grid.Col span={12} style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>

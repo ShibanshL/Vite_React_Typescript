@@ -104,7 +104,7 @@ function Display_1({check}:PropsN) {
             <Grid.Col span={12}>
               <Group>
                 <MediaQuery query='(max-width:500px)' styles={{fontSize:'5vw !important'}}>
-                <Text  style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-2vh',fontFamily: 'Poppins'}}
+                <Text  style={{fontSize:'2vw !important', margin:0, padding:0 , marginTop:'-2vh',fontFamily: 'Poppins'}}
                             weight={700}>{data_R2?.location.name}</Text>
                 </MediaQuery>
               </Group>

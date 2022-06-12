@@ -93,31 +93,40 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-          <Grid style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column',fontFamily: 'Poppins', padding:'20px'}}>
+          <Grid style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column',fontFamily: 'Poppins', padding:'20px', color:'white'}}>
            <Grid.Col span={12}>
               <Group direction='column'>
-                <Text align="center"  variant="gradient" gradient={{ from: 'pink', to: 'cyan', deg: 45 }} style={{ fontSize:'8vw',fontFamily: 'Poppins'}}>{data_R2?.current.temp_c}°</Text>
-                {/* <Text size='sm'   align="center" style={{}}>{data_R2?.current.temp_f}°F</Text> */}
+                <MediaQuery query='(max-width:500px)' styles={{fontSize:'20vw !important'}}>
+                  <Text align="center"  variant="gradient" gradient={{ from: '#E9B7CE', to: '#D3F3F1', deg: 45 }} style={{ fontSize:'8vw',fontFamily: 'Poppins'}}>{data_R2?.current.temp_c}°</Text>
+                </MediaQuery>
               </Group>
             </Grid.Col>
             <Grid.Col span={12}>
               <Group>
+                <MediaQuery query='(max-width:500px)' styles={{fontSize:'5vw !important'}}>
                 <Text  style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-2vh',fontFamily: 'Poppins'}}
-                            weight={700}>{data_R2?.location.name}</Text></Group>
+                            weight={700}>{data_R2?.location.name}</Text>
+                </MediaQuery>
+              </Group>
             </Grid.Col>
             <Grid.Col span={12}>
-              <Group><Text  
-                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'0',fontFamily: 'Poppins'}}
-                            weight={700}>{data_R2?.location.country}</Text></Group>
+              <Group>
+              <MediaQuery query='(max-width:500px)' styles={{fontSize:'7vw !important'}}>
+                <Text style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'0',fontFamily: 'Poppins'}}
+                            weight={700}>{data_R2?.location.country}</Text>
+                </MediaQuery>
+                            
+              </Group>
             </Grid.Col>
             <Group>
               {data_R3?.forecast.forecastday.map(e => {return( 
                     <>
-                        <Card style={{margin:'10px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                        <Card style={{margin:'10px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.3)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column', color:'white'}}>
                             <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
                             <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
-                                {/* <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text> */}
+                              <MediaQuery query='(max-width:500px)' styles={{fontSize:'2vw !important'}}>
                                 <Text size='md'style={{fontSize:'0.7vw'}} key={e.date}>{e.date}</Text>
+                              </MediaQuery>
                             </Group>
                             <img src={e.day.condition.icon} alt="err" />
                         </Card>
@@ -125,18 +134,24 @@ function Display_1({check}:PropsN) {
               )})}
             </Group>
             <Group>
-              <Text style={{fontSize:'2vw'}}>{data_R3?.forecast.forecastday[0].day.condition.text}</Text>
+              <MediaQuery query='(max-width:500px)' styles={{fontSize:'5vw !important'}}>
+                <Text style={{fontSize:'2vw'}}>{data_R3?.forecast.forecastday[0].day.condition.text}</Text>
+              </MediaQuery>
             </Group>
-            <Grid style={{background:'yellow', marginTop:'2vh', width:'100%', borderRadius:'15px', padding:'10px'}}>
+            <Grid style={{background:'rgba(255,255,255,0.2)', backdropFilter:'blur(10px)', marginTop:'2vh', width:'100%', borderRadius:'15px', padding:'10px'}}>
                 <Grid.Col span={6}>
                   <Group direction='column' style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <img src='./assets/Wind.svg' alt="err" style={{width:'2.5vw'}}/>
+                    <MediaQuery query='(max-width:500px)' styles={{width:'7vw !important'}}>
+                      <img src='./assets/Wind.svg' alt="err" style={{width:'2.5vw'}}/>
+                    </MediaQuery>
                     <Text>{data_R?.wind.speed}KMPH</Text>
                   </Group>
                 </Grid.Col>
                 <Grid.Col span={6}>
                   <Group direction='column' style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-                    <img src='./assets/Clouds.svg' alt="err" style={{width:'2.5vw'}}/>
+                    <MediaQuery query='(max-width:500px)' styles={{width:'7vw !important'}}>
+                      <img src='./assets/Clouds.svg' alt="err" style={{width:'2.5vw'}}/>
+                    </MediaQuery>
                     <Text>{data_R?.main.humidity}%</Text>
                   </Group>
                 </Grid.Col>

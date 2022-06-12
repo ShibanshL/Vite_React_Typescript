@@ -46,7 +46,7 @@ function Sub_1()
                     <Grid.Col span={12}>
                         <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
                     </Grid.Col>
-                    <Grid.Col span={12} style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', background:'cyan'}}>
+                    <Grid.Col span={12} style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
                         <Display_1 check={check}/>
                     </Grid.Col>
                 </Grid>

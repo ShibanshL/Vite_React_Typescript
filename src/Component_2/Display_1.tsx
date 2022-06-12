@@ -1,38 +1,16 @@
 import React,{useState, useEffect} from 'react'
 import {api2} from '../Component_2/API2'
 import {api3} from '../Component_2/API3'
+import { api1 } from './API!';
 import {  Group, Text, Card,  Divider, MediaQuery, Grid } from '@mantine/core';
 
-interface api {
-    base: string
-    clouds: {all: number}
-    cod: number
-    coord: {lon: number, lat: number}
-    dt: number
-    id: number
-    main: {
-      feels_like: number
-      grnd_level: number
-      humidity: number
-      pressure: number
-      sea_level: number
-      temp: number
-      temp_max: number
-      temp_min: Number}
-    name: string
-    sys: {type: number, id: number, country: string, sunrise: number, sunset: number}
-    timezone: number
-    visibility: number
-    weather: [{id:number, main: string, description: string, icon: string}]
-    wind: {speed:number, deg: number, gust: number}
-  }
 
 interface PropsN {
     check:string
   }
 function Display_1({check}:PropsN) {
     const [find, setFind] = useState<Boolean>(false)
-    const [data_R, setData_R] = useState<api>()
+    const [data_R, setData_R] = useState<api1>()
     const [data_R2, setData_R2] = useState<api2>()
     const [data_R3, setData_R3] = useState<api3>()
     const [name,setName] = useState<string>('')
@@ -115,18 +93,44 @@ function Display_1({check}:PropsN) {
       else{
         return(
           <>
-          <Grid>
-            <Grid.Col span={6}>
-              <Group><Text   variant="gradient" gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
-                            size="xl"
-                            weight={700}>{data_R2?.location.name}</Text></Group>
-            </Grid.Col>
-            <Grid.Col span={6}>
+          <Grid style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column',fontFamily: 'Poppins'}}>
+           <Grid.Col span={12}>
               <Group direction='column'>
-                <Text size='xl'   align="center" style={{ /*marginTop:'-18vh'*/}}>{data_R2?.current.temp_c}°</Text>
-                <Text size='sm'   align="center" style={{ /*marginTop:'-5vh'*/}}>{data_R2?.current.temp_f}°F</Text>
+                <Text align="center"  variant="gradient" gradient={{ from: 'pink', to: 'cyan', deg: 45 }} style={{ fontSize:'8vw',fontFamily: 'Poppins'}}>{data_R2?.current.temp_c}°</Text>
+                {/* <Text size='sm'   align="center" style={{}}>{data_R2?.current.temp_f}°F</Text> */}
               </Group>
             </Grid.Col>
+            <Grid.Col span={12}>
+              <Group><Text  
+                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-10vh',fontFamily: 'Poppins'}}
+                            weight={700}>{data_R2?.location.name}</Text></Group>
+            </Grid.Col>
+            <Grid.Col span={12}>
+              <Group><Text  
+                            style={{fontSize:'1.5vw', margin:0, padding:0 , marginTop:'-5vh',fontFamily: 'Poppins'}}
+                            weight={700}>{data_R2?.location.country}</Text></Group>
+            </Grid.Col>
+            <Group>
+              {data_R3?.forecast.forecastday.map(e => {return( 
+                    <>
+                    {/* <Grid gutter="xs"> */}
+                      {/* <Grid.Col span={4}> */}
+                        <Card style={{margin:'10px', padding:'5px', textAlign:'center',/* height:'230px', width:'170px',*/ background:'rgba(255,255,255,0.5)', borderRadius:'10px' ,display:'flex',alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                            <Text size='xl'key={e.day.avgtemp_c}>{e.day.avgtemp_c}&deg;C</Text>
+                            <Group direction='column' style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
+                                {/* <Text size='md'key={e.day.condition.text}>{e.day.condition.text}</Text> */}
+                                <Text size='md'style={{fontSize:'0.8vw'}} key={e.date}>{e.date}</Text>
+                            </Group>
+                            <img src={e.day.condition.icon} alt="err" />
+                        </Card>
+                      {/* </Grid.Col> */}
+                    {/* </Grid>  */}
+                    </>
+              )})}
+            </Group>
+            <Group>
+              
+            </Group>
           </Grid>
           </>
         )

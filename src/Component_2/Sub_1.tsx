@@ -42,11 +42,11 @@ function Sub_1()
     else{
         return (
             <>
-                <Grid>
-                    <Grid.Col span={4}>
+                <Grid style={{ display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
+                    <Grid.Col span={12}>
                         <Input_1 data={data} setData={setData} handleSubmit={handleSubmit}/>
                     </Grid.Col>
-                    <Grid.Col span={12}>
+                    <Grid.Col span={12} style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', background:'cyan'}}>
                         <Display_1 check={check}/>
                     </Grid.Col>
                 </Grid>

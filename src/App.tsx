@@ -16,8 +16,6 @@ function App() {
       })}
     >
       <Container size="xl" px="xl" style={{background:'rgba(255,255,255,0.2)', borderRadius:'15px', padding:'20px'}}><Sub_1 /></Container>
-      {/* <Container  style={{background:'pink'}} size='xs'>Hi have good day</Container> */}
-
     </AppShell>
   );
 }
